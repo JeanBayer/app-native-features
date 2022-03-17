@@ -42,6 +42,13 @@ class _LocationInputState extends State<LocationInput> {
       return;
     }
 
+    final staticMapImageUrl = LocationHelper.generateLocationPreviewImage(
+      latitude: selectedLocation.latitude,
+      longitude: selectedLocation.longitude,
+    );
+    setState(() {
+      _previewImageUrl = staticMapImageUrl;
+    });
     widget.selectPlace(selectedLocation.latitude, selectedLocation.longitude);
   }
 
